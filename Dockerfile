@@ -1,22 +1,24 @@
-# Use a Node.js base image
-FROM node:18-alpine AS builder
+# Use an official Node.js runtime as a parent image
+FROM node:18-alpine
 
-# Set working directory inside the container
+# Set working directory inside container
 WORKDIR /app
 
-# Copy package.json and package-lock.json to leverage Docker's caching
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies (npm install)
+# Install dependencies
 RUN npm install
 
-# Copy the rest of the application files
+# Copy the rest of the project files
 COPY . .
 
-# Run the build script
+# Build the project
 RUN npm run build
 
-# Optionally, you can expose a port if you want to serve the built app
+# Expose the port Vite runs on
 EXPOSE 4173
 
-# The build step is now complete, the image only contains the build output
+# Command to start the application with port 4173
+CMD ["npm", "run", "preview", "--", "--port", "4173"]
+
