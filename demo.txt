@@ -9,7 +9,9 @@ npx eslint src/App.tsx --fix
 
 npx eslint . --fix
 
-docker-compose up --build
+docker-compose build
+docker-compose up
+
 
 
 
