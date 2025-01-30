@@ -21,7 +21,8 @@ dist-ssr
 .env.*.local
 
 # Docker-related files
-Dockerfile.*
+
+
 .dockerignore
 
 # Editor directories and files
