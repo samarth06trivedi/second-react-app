@@ -21,7 +21,6 @@ dist-ssr
 .env.*.local
 
 # Docker-related files
-Dockerfile
 Dockerfile.*
 .dockerignore
 

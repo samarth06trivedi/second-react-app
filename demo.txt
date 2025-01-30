@@ -7,5 +7,9 @@ const unusedFunction = () => {
 npx eslint src/App.tsx
 npx eslint src/App.tsx --fix
 
+npx eslint . --fix
+
+
+
 
 
