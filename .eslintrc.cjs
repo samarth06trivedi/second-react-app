@@ -4,36 +4,49 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    "airbnb",
-    "airbnb-typescript",
-    "airbnb/hooks",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:prettier/recommended",
+    'airbnb',
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:prettier/recommended',
   ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: "./tsconfig.app.json",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: './tsconfig.app.json',
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ['react', '@typescript-eslint'],
   rules: {
     // React 18 specific rules
-    "react/react-in-jsx-scope": "off", // Not needed in React 18
-    "@typescript-eslint/no-shadow": "off",
-    "react/function-component-definition": [
+    'react/react-in-jsx-scope': 'off', // Not needed in React 18
+    '@typescript-eslint/no-shadow': 'off',
+    'react/function-component-definition': [
       2,
-      { namedComponents: "arrow-function" },
+      { namedComponents: 'arrow-function' },
     ],
     // Add your custom rules here
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
   },
   settings: {
     react: {
-      version: "18.2", // Specify React 18 version
+      version: '18.2', // Specify React 18 version
+    },
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
     },
   },
 };
