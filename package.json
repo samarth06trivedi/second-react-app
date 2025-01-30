@@ -11,7 +11,7 @@
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,css,md}\"",
     "type-check": "tsc --noEmit",
-    "prepare": "husky && husky install"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.4",
