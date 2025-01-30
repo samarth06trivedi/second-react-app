@@ -1,0 +1,11 @@
+const testVariable = "Hello"; 
+const unusedFunction = () => {
+  console.log("This function is never used");
+};
+
+
+npx eslint src/App.tsx
+npx eslint src/App.tsx --fix
+
+
+
